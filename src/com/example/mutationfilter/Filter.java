@@ -13,11 +13,12 @@ package com.example.mutationfilter;
 public interface Filter {
 
     /* Returns true if Mutation specified by input row of .tab file passes the specifications
-     * of the given filter.
+     * of the given filter.  FamilyDataGroup family indicates the FamilyDataGroup to which the individual
+     * whose row is being filtered belongs to.
      *
      * Returns false if position does not pass.
      */
-    boolean pass(String[] tabRow);
+    boolean pass(String[] tabRow, FamilyDataGroup family);
 
     /* Updates the Flags variable assumed to be in each implementation of Filter by
      * setting the header to whatever is given by

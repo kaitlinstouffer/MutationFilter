@@ -24,7 +24,7 @@ public class QualityFilter implements Filter {
         flags.parseHeader(header);
     }
 
-    public boolean pass(String[] tabRow) {
+    public boolean pass(String[] tabRow, FamilyDataGroup family) {
         if (flags.DEPTH < 0) {
             return true;
         }
@@ -33,11 +33,11 @@ public class QualityFilter implements Filter {
 
         // Filter off of both Depth and PASSING filter (depth must be greater than cutoff and PASS must not be hard to validate)
         if (flags.DEPTH_CUTOFF < 0) {
-            if (flags.CONSANGUINEOUS >= 0) {
-                depthCutOff = 20;
+            if (family.consanguineous) {
+                depthCutOff = 10;
             }
             else {
-                depthCutOff = 10;
+                depthCutOff = 20;
             }
         }
 

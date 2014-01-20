@@ -1,5 +1,6 @@
 package com.example.mutationfilter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -43,13 +44,16 @@ public class Flags {
 
     //Filter Specific Flags
     public int CONSANGUINEOUS = -1;
+    public ArrayList<Integer> CONSANGUINEOUS_FAMILIES = null;
     public double SNP_FREQ = 0.0;
     public String[] CROSS_REF_DIR;
     public int DEPTH_CUTOFF = -1; // if none given, then defaults to 10 for non-consanguineous and 20 for consanguineous
     public boolean RS_ONLY = false; // only consider snps with rsIDs to be snps
     public int REF_CUTOFF = 1;
     public int NUM_EXON_READ = -1;
-    public String BAM_DIR;
+    public String BAM_FILE_NAMES;
+    // TODO: remove the following
+    //public String BAM_EXT = ".bam";
 
     // Mutation Types
     public boolean FRAMESHIFT = false;
@@ -65,6 +69,7 @@ public class Flags {
 
     // Output Specifications
     public boolean PRINT_BY_FAM = false;
+    public boolean PRINT_SHORT_GENE = false;
 
 
     public Flags() {
@@ -117,7 +122,7 @@ public class Flags {
             else if (headerCols[i].contains("GMAF")) {
                 GMAF = i;
             }
-            else if (headerCols[i].contains("hange")) {
+            else if (headerCols[i].equals("Change") || headerCols[i].equals("change")) {
                 REF = i;
             }
         }
@@ -227,6 +232,20 @@ public class Flags {
                 CONSANGUINEOUS = Integer.parseInt(s.substring(3));
             }
 
+            else if (s.equals("-cFam")) {
+                if ((i+1) < args.length) {
+                    i++;
+                    String[] dirs = args[i].split(",");
+                    CONSANGUINEOUS_FAMILIES = new ArrayList<Integer>();
+                    for (String fam : dirs) {
+                        CONSANGUINEOUS_FAMILIES.add(Integer.parseInt(fam));
+                    }
+                }
+                else {
+                    System.out.println("WARNING: consanguinity of families not specified.  Consanguineous flag will be applied to all families.");
+                }
+            }
+
             // rsIDs used to mark snps only
             // -rs
             else if (s.equals("-rs")) {
@@ -236,7 +255,7 @@ public class Flags {
             // exon Reads incorporation
             // if none given, assume all individuals must possess the mutation (i.e. no exonRead incorporation)
             // Note: is implemented on a per family basis (i.e. number of individuals per family that must have mutation; same for all families)
-            else if (s.equals("-exonRead=")) {
+            else if (s.contains("-exonRead=")) {
                 NUM_EXON_READ = Integer.parseInt(s.substring(10));
             }
 
@@ -244,9 +263,19 @@ public class Flags {
             else if (s.equals("-bamRef")) {
                 if ((i+1) < args.length) {
                     i++;
-                    BAM_DIR = args[i];
+                    BAM_FILE_NAMES = args[i];
                 }
             }
+
+            // bam extension
+            /*
+            else if (s.equals("-bamExt")) {
+                if ((i+1) < args.length) {
+                    i++;
+                    BAM_EXT = args[i];
+                }
+            }
+            */
 
             // List of Filters to Use
             else if (s.equals("-filters")) {
@@ -280,6 +309,9 @@ public class Flags {
             else if (s.equals("-outputFam"))
                 PRINT_BY_FAM = true;
 
+            else if (s.equals("-outputShortGene"))
+                PRINT_SHORT_GENE = true;
+
             else if (s.equals("-help")) {
                 System.out.println("Usage:");
                 System.out.println("java FilterProgram fileWithExomeFileNames outputFileRootName [opts]");
@@ -290,17 +322,21 @@ public class Flags {
                 System.out.println("-d= \t Retain mutations sequenced with coverage greater than or equal to d.  Default is 20 for consanguineous and 10 otherwise.");
                 System.out.println("-Ext \t Retain mutations of type Frameshift, Splice_Site, or Stop_gained/lost only.");
                 System.out.println("-Mut_Type {m,s,fs,ss} \t Retain mutations only of types specified (missense, stop, frameshift, splice_site)");
-                System.out.println("-x \t X linked disease. Default is false.  Only returns mutations on X chromosome if true.");
+                System.out.println("-x \t X linked disease. Default is false.  Returns homozygous mutations on X chromosome only.  All input files assumed to be male.");
                 System.out.println("-r \t Recessive disease.  Default is Dominant.");
-                System.out.println("-c= \t Consanguineous Individuals.  Retain mutations within homozygous regions of specified cM. (Note: applied to all individuals.)");
+                System.out.println("-c= \t Consanguineous Individuals.  Retain mutations within homozygous regions of specified cM. (Note: applied to all families unless cFam is specified.)");
+                System.out.println("-cFam {in1,in2,in3....(in : 0 to #families-1) \t Indicates which families are consanguineous if -c= flag is specified.  Note: same cM distance applied to all consanguineous families.");
                 System.out.println("-rs \t Consider only snps with an rsID in filtering for known snps.  Default is to consider all Ids.");
                 System.out.println("-snpF= \t Retain mutations, if common snps, with a frequency less than this.  Default is 0.");
                 System.out.println("-ref {dir1;dir2;dir3...} \t Reference Directories to cross reference mutations in candidate individuals against.");
                 System.out.println("-ref_cutoff= \t Cutoff for Cross Reference.  Eliminate mutations if found in at least this many individuals.  Default is 1.");
                 System.out.println("-filters {q,snp,in,mt} \t Specify which filters to use.  Default is to use all filters (quality, snps, inheritance pattern (homo/heterozygous), mutation type (all non-intronic and non-synonymous))");
-                System.out.println("-exonReads=# \t Consider mutations that occur in at least # individuals and check bam files to see if these locations are unread in other individuals.");
-                System.out.println("-bamRef {dir} \t Read Bam Files from within this directory.  Names of Bam files assumed to be same as roots of *.annot.tab");
+                System.out.println("-exonRead=# \t Consider mutations that occur in at least # individuals and check bam files to see if these locations are unread in other individuals.");
+                System.out.println("-bamRef {filename} \t File name with list of bam files in same format as list of tab-separated files.");
+                //System.out.println("-bamRef {dir} \t Read Bam Files from within this directory.  Names of Bam files assumed to be same as roots of *.annot.tab");
+                //System.out.println("-bamExt {ext} \t Extension of bam files (following NAME in NAME.annot.tab).  Default is .bam.  Specify root begining with '.'.");
                 System.out.println("-outputFam \t Prints potential mutations grouped by family first over grouping by gene.  Default is to group overall by gene.");
+                System.out.println("-outputShortGene \t Prints only those genes that more than one family have a mutation in.  If only one family provided, nothing is printed.  Flag ignored if output grouped by family.");
             }
             else {
                 System.out.println("WARNING: Flag not Recognized.  Please type -help for further information.");
@@ -308,8 +344,8 @@ public class Flags {
         }
 
         // check for Exon Read but no Bam File Directory
-        if (NUM_EXON_READ > 0 && (BAM_DIR == null)) {
-            System.out.println("WARNING: No bam file directory specified.  Exon Read cannot be executed.");
+        if (NUM_EXON_READ > 0 && (BAM_FILE_NAMES == null)) {
+            System.out.println("WARNING: No bam file names specified.  Exon Read cannot be executed.");
         }
     }
 

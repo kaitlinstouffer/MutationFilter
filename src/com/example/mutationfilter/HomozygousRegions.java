@@ -23,7 +23,7 @@ public class HomozygousRegions {
 
     // Instance Variables
     private double percentage = 0.0;
-    private int cMLength = 0;  // should be formed from
+    private int cMLength = 0;  // should be formed from commandline arg
     private TreeMap<String,ArrayList<EndPoints>> homoRegions; // chromosome Number and arraylist of pairs of start and end coordinates
     private Flags flags;
 
@@ -82,6 +82,121 @@ public class HomozygousRegions {
             line = reader.readColumnsArray();
         }
 
+        // Approach 2:
+        /* Iterate over lines in file and keep track of blocks of at least cMLength.
+         * If a block of cMLength is 95% homozygous, then put into list.  Otherwise,
+         * slide down one location and re-calculate.
+         */
+        while (line != null) {
+            // start finding cM block
+            ArrayList<String[]> linesOfBlock = new ArrayList<String[]>();
+            String chromLoc = line[0]; // don't count the same location multiple times
+            String[] locParts = chromLoc.split(":");
+            int startOfRegion = Integer.parseInt(locParts[1]);
+            String chromosome = locParts[0];
+            double startOfRegionCM = conversion.getcM(chromosome, startOfRegion);
+            int endOfRegion = startOfRegion;
+            double endOfRegionCM = startOfRegionCM;
+            int numOfHet = 0;
+
+            // walk through locations to find until reach cMLength
+            while ((endOfRegion >= startOfRegion) && ((endOfRegionCM - startOfRegionCM) < cMLength)) {
+                if (line[flags.HOMO].contains("HET")) {
+                    numOfHet++;
+                }
+                linesOfBlock.add(line);
+                while (line != null && line[0].equals(chromLoc)) {
+                    line = reader.readColumnsArray();
+                }
+                if (line == null)
+                    break;
+                chromLoc = line[0];
+                endOfRegion = Integer.parseInt(line[0].split(":")[1]);
+                endOfRegionCM = conversion.getcM(chromosome, endOfRegion);
+
+            }
+            boolean changeChrom = false;
+            // if chromosomes changed, while finding this last one, then skip adding this block
+            if (endOfRegion <= startOfRegion || line == null) {
+                // check last element that was added
+                String[] lastLoc = linesOfBlock.get(linesOfBlock.size()-1)[0].split(":");
+                if ((conversion.getcM(lastLoc[0], Integer.parseInt(lastLoc[1])) - startOfRegionCM) >= cMLength) {
+                    // keep this block if percentage is correct
+                    if ((1.0 - (numOfHet / (double) linesOfBlock.size())) >= percentage) {
+                        if (!homoRegions.containsKey(chromosome)) {
+                            homoRegions.put(chromosome, new ArrayList<EndPoints>());
+                        }
+                        homoRegions.get(chromosome).add(new EndPoints(startOfRegion,Integer.parseInt(lastLoc[1])));
+                        // TODO: remove print debugging statement
+                        System.out.println("added " + chromosome + ":" + startOfRegion + "-" + lastLoc[1]);
+                    }
+
+                }
+
+            }
+
+
+            else {
+                // slide region down chromosome until is 95% homozygous
+                if (line[flags.HOMO].contains("HET")) {
+                    numOfHet++;
+                }
+                linesOfBlock.add(line);
+                while ((1.0 - (numOfHet / (double) linesOfBlock.size())) < percentage) {
+                    // remove first element and reset starting coordinates
+                    linesOfBlock.remove(0);
+                    String[] newStart = linesOfBlock.get(0)[0].split(":");
+                    startOfRegion = Integer.parseInt(newStart[1]);
+                    startOfRegionCM = conversion.getcM(chromosome, startOfRegion);
+
+                    // add coordinates until reach large enough length
+                    while ((endOfRegionCM - startOfRegionCM) < cMLength) {
+                        line = reader.readColumnsArray();
+                        if (line == null) {
+                            break;
+                        }
+                        if (line.equals(chromLoc)) {
+                            continue;
+                        }
+                        String[] loc = line[0].split(":");
+                        if (!loc[0].equals(chromosome)) {
+                            changeChrom = true;
+                            break;
+                        }
+                        chromLoc = line[0];
+                        endOfRegion = Integer.parseInt(loc[1]);
+                        endOfRegionCM = conversion.getcM(chromosome, endOfRegion);
+                        if (line[flags.HOMO].contains("HET")) {
+                            numOfHet++;
+                        }
+                        linesOfBlock.add(line);
+
+                    }
+                    if (line == null || changeChrom) {
+                        break;
+                    }
+                }
+                if (line == null || changeChrom) {
+                    continue;
+                }
+                else {
+                    // add block to list and get new line
+                    if (!homoRegions.containsKey(chromosome)) {
+                        homoRegions.put(chromosome,new ArrayList<EndPoints>());
+                    }
+                    homoRegions.get(chromosome).add(new EndPoints(startOfRegion, endOfRegion));
+                    System.out.println("added " + chromosome + ":" + startOfRegion + "-" + endOfRegion);
+                    line = reader.readColumnsArray();
+                    while (line != null && line[0].equals(chromLoc)) {
+                        line = reader.readColumnsArray();
+                    }
+                }
+            }
+
+        }
+
+        // Approach 1
+        /*
         // iterate over lines in file and keep track of start and end of homozygous regions
         int startOfRegion = 0;
         int endOfRegion = 0;
@@ -159,7 +274,9 @@ public class HomozygousRegions {
             }
             line = reader.readColumnsArray();
         }
+        */
         reader.close();
+
 
     }
 

@@ -25,17 +25,16 @@ public class TabFileWriter extends BufferedWriter {
     public void writeColumns(List<String> cols) throws IOException {
         for (String s : cols) {
             super.write(s + "\t");
-            super.write("\n");
-
         }
+        super.write("\n");
     }
 
     // Writes array of elements
     public void writeColumns(String[] cols) throws IOException {
         for (String s : cols) {
             super.write(s + "\t");
-            super.write("\n");
         }
+        super.write("\n");
     }
 
 

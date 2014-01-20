@@ -1,6 +1,5 @@
 package com.example.mutationfilter;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -64,18 +63,22 @@ public class CrossReference {
 
         // make list of all of locs to enumerate
         ArrayList<String> filesToEnumerate = new ArrayList<String>();
+        // Only keep files that end in .annot.tab
         for (String s : referenceDirectories) {
             File[] files = new File(s).listFiles();
             for (File f : files) {
-                if (f.isFile()) {
-                    filesToEnumerate.add(f.getName());
+                if (f.isFile() && f.getName().endsWith(EXTENSION)) {
+                    filesToEnumerate.add(s + f.getName());
                 }
             }
         }
+        // TODO: remove
+        System.out.println("in filterPossibleLocs and has made list of files.");
         for (String s : filesToEnumerate) {
             if (Arrays.asList(filesToIgnore).contains(s)) {
                 continue;
             }
+            System.out.println("reading file " + s);
             TabFileReader reader = new TabFileReader(s);
             String[] cols = reader.readColumnsArray();
             while (cols != null) {
@@ -89,7 +92,9 @@ public class CrossReference {
                 if (loc >= 0) {
                     removeLoc[loc]++;
                 }
+                cols = reader.readColumnsArray();
             }
+            reader.close();
         }
 
         // Remove found locations from list
@@ -107,6 +112,8 @@ public class CrossReference {
                 filteredLocs.add(m);
             }
         }
+        // TODO: remove
+        System.out.println("finished filtering locs for cross reference");
     }
 
 

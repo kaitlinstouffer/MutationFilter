@@ -26,7 +26,7 @@ import java.util.TreeMap;
 public class CmToMbMap {
 
     // Constants
-    private static String FILE_DIR = "~/IdeaProjects/MutationFilter/genetic_map_HapMapII_GRCh37/";
+    private static String FILE_DIR = "/Users/kaitlinstouffer/Dropbox/IdeaProjects/MutationFilter/genetic_map_HapMapII_GRCh37/";
 
     // Instance Variables
     private TreeMap<String,TreeMap<Integer,Double>> rates;
@@ -47,7 +47,9 @@ public class CmToMbMap {
 
             while (line != null) {
                 tree.put(Integer.parseInt(line[1]), Double.parseDouble(line[3]));
+                line = reader.readColumnsArray();
             }
+            reader.close();
 
             rates.put(String.valueOf(i),tree);
         }
@@ -67,7 +69,9 @@ public class CmToMbMap {
 
             while (line != null) {
                 xTree.put(Integer.parseInt(line[1]), Double.parseDouble(line[3]));
+                line = reader.readColumnsArray();
             }
+            reader.close();
         }
 
         rates.put("X", xTree);

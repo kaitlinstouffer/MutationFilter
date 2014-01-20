@@ -4,8 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../IdeaProjects/jython2.5.2/Demo/Demo.iml" filepath="$PROJECT_DIR$/../IdeaProjects/jython2.5.2/Demo/Demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/MutationFilter.iml" filepath="$PROJECT_DIR$/MutationFilter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../IdeaProjects/jython2.5.2/Demo/jreload/jreload.iml" filepath="$PROJECT_DIR$/../IdeaProjects/jython2.5.2/Demo/jreload/jreload.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../IdeaProjects/jython2.5.2/tests/tests.iml" filepath="$PROJECT_DIR$/../IdeaProjects/jython2.5.2/tests/tests.iml" />
     </modules>
   </component>
 </project>

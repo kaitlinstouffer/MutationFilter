@@ -25,7 +25,7 @@ public class SnpFilter implements Filter {
         flags.parseHeader(header);
     }
 
-    public boolean pass(String[] tabRow) {
+    public boolean pass(String[] tabRow, FamilyDataGroup family) {
         // don't filter based off snp if column not there
         if (flags.SNP < 0) {
             return true;
@@ -36,7 +36,7 @@ public class SnpFilter implements Filter {
 
         // Considers rs and any other IDs as SNPs
         if (flags.RS_ONLY) {
-            if ((!(tabRow[flags.SNP]).isEmpty() && tabRow[flags.SNP] != null) &&
+            if (((flags.SNP < tabRow.length && tabRow[flags.SNP] != null) && !(tabRow[flags.SNP]).isEmpty()) &&
                     ((tabRow[flags.SNP].contains("rs")))) {
                 f = 0;
                 isSNP = true;
@@ -45,15 +45,15 @@ public class SnpFilter implements Filter {
 
         }
         else {
-            if ((!(tabRow[flags.SNP]).isEmpty() && tabRow[flags.SNP] != null) &&
-                    ((tabRow[flags.SNP].contains("rs")) || (!tabRow[flags.SNP].contains(".")))) {
+            if (((flags.SNP < tabRow.length && tabRow[flags.SNP] != null) && !(tabRow[flags.SNP]).isEmpty()) &&
+                    ((tabRow[flags.SNP].contains("rs")) || (!tabRow[flags.SNP].equals(".")))) {
                 f = 0;
                 isSNP = true;
                 freqSet = false;
             }
         }
 
-        if ((flags.GMAF > 0) && !(tabRow[flags.GMAF].isEmpty() || tabRow[flags.GMAF] == null)) {
+        if (((flags.GMAF > 0) && flags.GMAF < tabRow.length) && !(tabRow[flags.GMAF] == null || tabRow[flags.GMAF].isEmpty())) {
             String allele = null;
             if (flags.REF > 0) {
                 allele = tabRow[flags.REF].split(">")[1];

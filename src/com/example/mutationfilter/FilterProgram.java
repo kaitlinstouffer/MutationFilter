@@ -9,6 +9,7 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
 import static com.example.mutationfilter.FamilyDataGroup.makeDataGroups;
+import static com.example.mutationfilter.FamilyDataGroup.setBamFileNames;
 
 /**
  * Created with IntelliJ IDEA.
@@ -47,6 +48,9 @@ public class FilterProgram {
         Flags flags = new Flags();
         flags.parseCommandLineArgs(args);
 
+        // set Consanguinity flags per family
+        FamilyDataGroup.setConsanguinity(families, flags);
+
         ArrayList<Filter> filters = new ArrayList<Filter>();
         // Check for settings of each filter and create filter if specified
         if (flags.FILTER_INHERITANCE) {
@@ -65,6 +69,8 @@ public class FilterProgram {
             SnpFilter sF = new SnpFilter(flags);
             filters.add(sF);
         }
+        // TODO: REMOVE
+        System.out.println("Filters = " + filters.size());
 
         // Parse through files and find candidate locations for each individual
         // NOTE: Make all comparisons with location as number/character:loc, no "chr"; trim before running through filters
@@ -76,6 +82,12 @@ public class FilterProgram {
             int count = 0;
             for (String ind : family.individuals) {
                 ArrayList<Mutation> indMuts = new ArrayList<Mutation>();
+                // if family is consanguineous and filtering based on homozygous regions, make new homozygous region for individual
+                // Inheritance filter will be first in list of filters
+                if (flags.FILTER_INHERITANCE && ((flags.CONSANGUINEOUS > 0) && family.consanguineous)) {
+                    InheritanceFilter inF = (InheritanceFilter) filters.get(0);
+                    inF.setHomoRegions(ind);
+                }
 
                 TabFileReader reader = new TabFileReader(ind);
                 String[] line = reader.readColumnsArray();
@@ -100,7 +112,7 @@ public class FilterProgram {
                     }
                     boolean passFilters = true;
                     for (Filter f : filters) {
-                        if (!f.pass(line)) {
+                        if (!f.pass(line, family)) {
                             passFilters = false;
                             break;
                         }
@@ -120,18 +132,26 @@ public class FilterProgram {
             }
             // set familyMuts as family data group instance variable
             family.possibleLocs = familyMuts;
+            // TODO: REMOVE
+            for (ArrayList<Mutation> am : family.possibleLocs) {
+                System.out.println("number of possible locs is " + am.size());
+            }
         }
 
         // If Exon Reads Used, make list of possible locations for each family to check if read
         if (flags.NUM_EXON_READ > 0) {
+            // set bam files in families
+            setBamFileNames(families,flags.BAM_FILE_NAMES);
             for (FamilyDataGroup fdg : families) {
                 // Only do Exon Reads if number of individuals that must have mutation in family is not = everyone
                 if (flags.NUM_EXON_READ < fdg.individuals.length) {
                     // Integer key represents number of individual in family data group
                     TreeMap<Integer,ArrayList<String>> locsToRead = fdg.getLocsToRead(flags.NUM_EXON_READ);
                     // check if locs are read for each individual and if so, add to possibleLocs
-                    ExonRead er = new ExonRead(locsToRead, fdg, flags);
-                    er.checkSequencing();
+                    if (locsToRead != null) {
+                        ExonRead er = new ExonRead(locsToRead, fdg);
+                        er.checkSequencing();
+                    }
                 }
             }
         }
@@ -154,23 +174,30 @@ public class FilterProgram {
             printMutationsByGeneFamSeparate(flags, families, outputFile);
         }
         else {
+            System.out.println("in print");
             printMutationsByGene(flags, families, outputFile);
+            System.out.println("out of print");
         }
 
-        // Complete Cross Reference to Eliminate Artifacts in Sequencing
-        for (FamilyDataGroup fdg : families) {
-            CrossReference cr = new CrossReference(flags.CROSS_REF_DIR,flags.REF_CUTOFF,fdg.individuals,fdg.commonLocs);
-            cr.filterPossibleLocs();
-            fdg.commonLocs = cr.filteredLocs;
-            fdg.setCommonGenes(flags); // reset gene dictionary with new subset of locs
-        }
+        if (flags.CROSS_REF_DIR != null) {
+            // Complete Cross Reference to Eliminate Artifacts in Sequencing
+            for (FamilyDataGroup fdg : families) {
+                CrossReference cr = new CrossReference(flags.CROSS_REF_DIR,flags.REF_CUTOFF,fdg.individuals,fdg.commonLocs);
+                cr.filterPossibleLocs();
+                fdg.commonLocs = cr.filteredLocs;
+                // TODO: REMOVE PRINT STATEMENTS
+                System.out.println("Filtered locs in cross reference.");
+                fdg.setCommonGenes(flags); // reset gene dictionary with new subset of locs
+                System.out.println("Reset locs for family.");
+            }
 
-        outputFile = outputRoot + "_CrossRef_Genes.txt";
-        if (flags.PRINT_BY_FAM) {
-            printMutationsByGeneFamSeparate(flags, families, outputFile);
-        }
-        else {
-            printMutationsByGene(flags,families,outputFile);
+            outputFile = outputRoot + "_CrossRef_Genes.txt";
+            if (flags.PRINT_BY_FAM) {
+                printMutationsByGeneFamSeparate(flags, families, outputFile);
+            }
+            else {
+                printMutationsByGene(flags,families,outputFile);
+            }
         }
 
         // TODO: implement ability to filter out mutations or rank by how many families have mutations in those genes
@@ -190,17 +217,27 @@ public class FilterProgram {
         int count = 0;
         for (FamilyDataGroup fdg : families) {
             writer.write("Family " + count + ":\n");
+
+            /*
+            for (String indName : fdg.individuals) {
+                writer.write(indName + " ");
+            }
+            */
+            writer.write("\n");
             writer.write("--------------------------------------------------------------------------------------\n");
             writer.write("--------------------------------------------------------------------------------------\n");
             TreeMap<String, TreeMap<Mutation,ArrayList<ArrayList<String[]>>>> linesToPrint = getInputGeneLines(fdg, flags);
             for (String gene : linesToPrint.keySet()) {
                 for (Mutation m : linesToPrint.get(gene).keySet()) {
+                    int indvCount = 0;
                     writer.write("* " + m.chromLoc + " *\n");
                     for (ArrayList<String[]> as : linesToPrint.get(gene).get(m)) {
+                        writer.write(fdg.individuals[indvCount] + "\n");
                         for (String[] s : as) {
                             writer.writeColumns(s);
                         }
                         writer.write("\n");
+                        indvCount++;
                     }
                 }
                 writer.write("--------------------------------------------------------------------------------------\n");
@@ -232,19 +269,45 @@ public class FilterProgram {
 
         // Iterate over all genes and print out family data if exists for given gene
         for (String gene : allGenes) {
+            if (flags.PRINT_SHORT_GENE) {
+                int total = 0;
+                for (int k = 0; k < families.size(); k++) {
+                    TreeMap<Mutation,ArrayList<ArrayList<String[]>>> temp = linesToPrint.get(k).get(gene);
+                    if (temp != null) {
+                        total++;
+                    }
+                }
+                if (total < 2) {
+                    continue;
+                }
+            }
             writer.write(gene + ":\n");
             writer.write("--------------------------------------------------------------------------------------\n");
             writer.write("--------------------------------------------------------------------------------------\n");
+
             for (int i = 0; i < families.size(); i++) {
                 TreeMap<Mutation,ArrayList<ArrayList<String[]>>> famLines = linesToPrint.get(i).get(gene);
+                if (famLines == null) {
+                    continue;
+                }
+
                 writer.write("Family " + i + ":\n");
+                /*
+                for (String indName : families.get(i).individuals) {
+                    writer.write(indName + " ");
+                }
+                */
+                writer.write("\n");
                 for (Mutation m : famLines.keySet()) {
                     writer.write("* " + m.chromLoc + " *\n");
+                    int indvCount = 0;
                     for (ArrayList<String[]> as : famLines.get(m)) {
+                        writer.write(families.get(i).individuals[indvCount] + "\n");
                         for (String[] s : as) {
                             writer.writeColumns(s);
                         }
                         writer.write("\n");
+                        indvCount++;
                     }
                 }
                 writer.write("--------------------------------------------------------------------------------------\n");
@@ -254,12 +317,15 @@ public class FilterProgram {
             writer.write("--------------------------------------------------------------------------------------\n");
             writer.write("\n");
         }
+        writer.close();
 
     }
 
     /*
      * Reads in input files, one at a time, and registers the rows that correspond to the
      * locations given as possible in common genes.
+     *
+     * Treats mutations with same change and at same locations as the same.
      */
     private static TreeMap<String, TreeMap<Mutation,ArrayList<ArrayList<String[]>>>> getInputGeneLines(FamilyDataGroup fdg, Flags flags) throws IOException {
         TreeMap<String, TreeMap<Mutation, ArrayList<ArrayList<String[]>>>> inputLines =
@@ -310,6 +376,48 @@ public class FilterProgram {
                 }
             }
         }
+
+        // group together lines per person corresponding to mutations that just differ by transcript
+        TreeMap<String, ArrayList<ArrayList<Mutation>>> indsToCombine = new TreeMap<String, ArrayList<ArrayList<Mutation>>>();
+        for (String s : inputLines.keySet()) {
+            indsToCombine.put(s,new ArrayList<ArrayList<Mutation>>());
+            // mutations in sorted order
+            Mutation mTemp = null;
+            ArrayList<Mutation> ai = new ArrayList<Mutation>();
+            for (Mutation m : inputLines.get(s).keySet()) {
+                if (!m.equalsMutation(mTemp) && !ai.isEmpty()) {
+                    indsToCombine.get(s).add(ai);
+                    ai = new ArrayList<Mutation>();
+                }
+                ai.add(m);
+                mTemp = m;
+            }
+            // add last list
+            indsToCombine.get(s).add(ai);
+        }
+
+            // Combine ArrayList<String[]> per individual corresponding to same mutation,
+            // with different transcript only
+            for (String s : inputLines.keySet()) {
+                TreeMap<Mutation,ArrayList<ArrayList<String[]>>> newVal = new TreeMap<Mutation, ArrayList<ArrayList<String[]>>>();
+                for (ArrayList<Mutation> ai : indsToCombine.get(s)) {
+                    // Actual Mutation object just referenced by the first one in list
+                    Mutation ref = ai.get(0);
+                    newVal.put(ref,inputLines.get(s).get(ref));
+                    for (int k = 1; k < ai.size(); k++) {
+                        ArrayList<ArrayList<String[]>> temp = inputLines.get(s).get(ai.get(k));
+                        int j = 0;
+                        for (ArrayList<String[]> t : temp) {
+                            for (String[] st : t) {
+                                newVal.get(ref).get(j).add(st);
+                            }
+                            j++;
+                        }
+                    }
+                }
+                inputLines.put(s, newVal);
+            }
+
         return inputLines;
     }
 

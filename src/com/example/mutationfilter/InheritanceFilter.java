@@ -19,7 +19,7 @@ import java.io.IOException;
 public class InheritanceFilter implements Filter {
 
     // Constants
-    private final double PERCENT = 0.95; // percentage cutoff for homozygous regions
+    private final double PERCENT = 1; // percentage cutoff for homozygous regions
 
     // Instance Variables
     private Flags flags;
@@ -29,6 +29,7 @@ public class InheritanceFilter implements Filter {
     public InheritanceFilter(Flags f) throws IOException {
         flags = f;
         homoRegions = null;
+        // assume if consanguineous flag is set that at least one family is consanguineous
         if (f.CONSANGUINEOUS > 0) {
             conversion = new CmToMbMap();
         }
@@ -43,24 +44,28 @@ public class InheritanceFilter implements Filter {
         flags.parseHeader(header);
     }
 
-    public boolean pass(String[] tabRow) {
+    public boolean pass(String[] tabRow, FamilyDataGroup family) {
         // if HOMO header not set or not found, location cannot be filtered out
         if (flags.HOMO < 0) {
             return true;
         }
 
-        // keep all X locs regardless of call unless X_LINKED flag is false and don't consider any X locs
+        // only keep X locs if X_LINKED is true; otherwise, keep no X locs
         // TODO: POSSIBLY CHANGE THIS IF GET TOO MANY ADDITIONAL LOCATIONS
         boolean isX = tabRow[0].split(":")[0].equalsIgnoreCase("x");
-        if (flags.X_LINKED && !isX) {
+        if (flags.X_LINKED) {
+            if (isX && tabRow[flags.HOMO].contains("HOMO")) {
+                return true;
+            }
             return false;
         }
-        if (isX) {
-            return true;
-        }
 
+        else {
+            if (isX) {
+                return false;
+            }
         // if dominant or recessive, but non-consanguineous, look for HET mutations only
-        if (!flags.RECESSIVE || !(flags.CONSANGUINEOUS >= 0)) {
+        if (!flags.RECESSIVE || !(family.consanguineous)) {
             if (!tabRow[flags.HOMO].contains("HOMO")) {
                 return true;
             }
@@ -89,6 +94,7 @@ public class InheritanceFilter implements Filter {
                 return false;
             }
 
+        }
         }
     }
 

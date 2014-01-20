@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="example">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../IdeaProjects/jython2.5.2/Demo/jreload/example.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

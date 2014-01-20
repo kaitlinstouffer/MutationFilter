@@ -25,7 +25,7 @@ public class MutationTypeFilter implements Filter {
         flags.parseHeader(header);
     }
 
-    public boolean pass(String[] tabRow) {
+    public boolean pass(String[] tabRow, FamilyDataGroup family) {
         if (flags.MUT_TYPE < 0) {
             return true;
         }
@@ -43,7 +43,7 @@ public class MutationTypeFilter implements Filter {
 
         // Default (none of mut_type commandline args are set)
         if (!flags.FRAMESHIFT && !flags.STOP_GAINED && !flags.SPLICE_SITE && !flags.MISSENSE) {
-            if (actualMut.contains(intron) || actualMut.contains(downstream)
+            if ((actualMut.contains(intron) && !actualMut.contains("splice")) || actualMut.contains(downstream)
                     || actualMut.contains(upstream) || actualMut.contains(nonCoding)
                     || actualMut.contains(interGene) || actualMut.contains(synonymous)
                     || actualMut.contains(nmd_transcript) || actualMut.contains(nc_transcript)) {

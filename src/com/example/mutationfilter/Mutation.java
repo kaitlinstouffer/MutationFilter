@@ -10,7 +10,7 @@ package com.example.mutationfilter;
  * Data Structure for describing SNPs and Indels found in an exome.
  * TO DO: implements Comparable for an ordering for intersection
  */
-public class Mutation {
+public class Mutation implements Comparable<Mutation>{
 
     // Instance Variables
     public String chromosome; // store chromosome number in either chr# or just #
@@ -46,6 +46,9 @@ public class Mutation {
         if (c.startsWith("c")) {
             chromLoc = c.substring(3);
         }
+        else {
+            chromLoc = c;
+        }
         String[] loc = chromLoc.split(":");
         chromosome = loc[0];
         locationNum = Integer.parseInt(loc[1]);
@@ -65,6 +68,7 @@ public class Mutation {
         chromLoc = row[0];
         chromosome = loc[0];
         locationNum = Integer.parseInt(loc[1]);
+        isSequenced = true;
 
         transcript = row[f.TRANSCRIPT];
         String[] change = row[f.REF].split(">");
@@ -83,7 +87,7 @@ public class Mutation {
 
         //TO DO (12/12)....FINISH THIS METHOD
         if (f.GMAF > 0 && isSnp) {
-            if (row[f.GMAF] != null && !row[f.GMAF].isEmpty()) {
+            if ((f.GMAF < row.length && row[f.GMAF] != null) && !row[f.GMAF].isEmpty()) {
                 String[] ss = row[f.GMAF].split("&");
                 boolean freqSet = false;
                 for (String s : ss) {
@@ -111,19 +115,38 @@ public class Mutation {
     }
 
     // Equals Methods
-    public boolean equals(Mutation m) {
+    @Override
+    public boolean equals(Object m) {
+        if (m == null) {
+            if (this == null) {
+                return true;
+            }
+            return false;
+        }
+        // if not correct class, then objects are not equal
+        if (!m.getClass().equals(this.getClass()))
+            return false;
         // check if are same object
         if (m == this)
             return true;
-        if (this.chromosome.equals(m.chromosome) && (this.locationNum == m.locationNum)
-                && this.refAllele.equals(m.refAllele) && this.altAllele.equals(m.altAllele)
-                && this.transcript.equals(m.transcript))
+
+        // cast Object m as mutation
+        Mutation mu = (Mutation) m;
+        if (this.chromosome.equals(mu.chromosome) && ((this.locationNum == mu.locationNum)
+                && (this.refAllele.equals(mu.refAllele) && (this.altAllele.equals(mu.altAllele)
+                && this.transcript.equals(mu.transcript)))))
             return true;
         return false;
     }
 
     // Returns true if Mutation objects describe same base change at same location
     public boolean equalsMutation(Mutation m) {
+        if (m == null) {
+            if (this == null) {
+                return true;
+            }
+            return false;
+        }
         if (m == this)
             return true;
         if (this.chromosome.equals(m.chromosome) && (this.locationNum == m.locationNum)
@@ -150,4 +173,23 @@ public class Mutation {
         }
     }
 
+    // compare Mutation objects based on the natural ordering of their chromLoc
+    @Override
+    public int compareTo(Mutation t) {
+        if (this.equals(t)) {
+            return 0;
+        }
+        // if equal same mutation, but different transcripts, order by transcript
+        else if (this.equalsMutation(t)) {
+            return(this.transcript.compareTo(t.transcript));
+        }
+        // if locations are equal but mutations are not, then order by refAllele or altAllele if refs are =
+        else if (this.chromLoc.equals(t.chromLoc)) {
+            if (this.refAllele.equals(t.refAllele)) {
+                return (this.altAllele.compareTo(t.altAllele));
+            }
+            return (this.refAllele.compareTo(t.refAllele));
+        }
+        return (this.chromLoc.compareTo(t.chromLoc));
+    }
 }

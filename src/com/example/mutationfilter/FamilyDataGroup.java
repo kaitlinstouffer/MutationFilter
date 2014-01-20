@@ -1,6 +1,5 @@
 package com.example.mutationfilter;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Dictionary;
@@ -19,11 +18,12 @@ public class FamilyDataGroup {
 
     //Instance Variables
     public String[] individuals;
+    public String[] bamIndividuals; // only used if bam files are specified
     boolean[] chrReferences; // each reference is true if file lists locations with "chr"
     public ArrayList<ArrayList<Mutation>> possibleLocs;
-    public ArrayList<Dictionary<String,ArrayList<Mutation>>> geneBanks;
     public ArrayList<Mutation> commonLocs;
     public TreeMap<String, ArrayList<Mutation>> commonGenes;
+    public boolean consanguineous;
     // TO DO: implement flexible versions of these data structures
 
     // Constructors
@@ -44,8 +44,46 @@ public class FamilyDataGroup {
             families.add(fdg);
             files = reader.readColumnsArray();
         }
+        reader.close();
 
         return families;
+    }
+
+    // Sets bam file names
+    public static void setBamFileNames(ArrayList<FamilyDataGroup> families, String inputFile) throws IOException {
+        TabFileReader reader = new TabFileReader(inputFile);
+        String[] files = reader.readColumnsArray();
+        int count = 0;
+        while (files != null) {
+            families.get(count).bamIndividuals = files;
+            files = reader.readColumnsArray();
+            count++;
+        }
+        if (count != families.size()) {
+            System.out.println("WARNING: not enough bam files specified in " + inputFile);
+        }
+        reader.close();
+    }
+
+    // Sets consanguinity flag
+    public static void setConsanguinity(ArrayList<FamilyDataGroup> families, Flags flags) {
+        for (FamilyDataGroup fdg : families) {
+            fdg.consanguineous = false;
+        }
+        // if no consanguineous flag set, assume no families are consanguineous
+        if (flags.CONSANGUINEOUS >= 0) {
+            if (flags.CONSANGUINEOUS_FAMILIES != null) {
+                for (Integer i : flags.CONSANGUINEOUS_FAMILIES) {
+                    families.get(i).consanguineous = true;
+                }
+            }
+            // apply consanguineous flag to all families if cFam was not specified
+            else {
+                for (FamilyDataGroup fdg : families) {
+                    fdg.consanguineous = true;
+                }
+            }
+        }
     }
 
     /* Returns TreeMap of individuals, each with list of locations (chr:loc string)
@@ -86,7 +124,8 @@ public class FamilyDataGroup {
                 for (int i = 0; i < individuals.length; i++) {
                     if (!withMut.contains(i)) {
                         if (mutsToRead.containsKey(i)) {
-                            mutsToRead.get(i).add(s);
+                            if (!mutsToRead.get(i).contains(s))
+                                mutsToRead.get(i).add(s);
                         }
                         else {
                             mutsToRead.put(i, new ArrayList<String>());
@@ -106,27 +145,36 @@ public class FamilyDataGroup {
     public void setCommonLocs() {
         // keep TreeMap of all of locs and how many individuals possess them
         // note: only mutation objects that are sequenced are stored in commonLocs
-        TreeMap<Mutation, Integer> commonLocTree = new TreeMap<Mutation,Integer>();
-        ArrayList<Mutation> unsequencedMuts = new ArrayList<Mutation>();
+        TreeMap<Mutation, boolean[]> commonLocTree = new TreeMap<Mutation,boolean[]>();
+        TreeMap<Mutation, ArrayList<Integer>> unsequencedMuts = new TreeMap<Mutation, ArrayList<Integer>>();
+        int numIndividual = 0;
         for (ArrayList<Mutation> am : possibleLocs) {
             for (Mutation m : am) {
                 if (!m.isSequenced) {
-                    unsequencedMuts.add(m);
+                    if (!unsequencedMuts.containsKey(m)) {
+                        unsequencedMuts.put(m,new ArrayList<Integer>());
+                    }
+                    unsequencedMuts.get(m).add(numIndividual);
                 }
                 else if (commonLocTree.containsKey(m)) {
-                    commonLocTree.put(m,commonLocTree.get(m) + 1);
+                    commonLocTree.get(m)[numIndividual] = true;
                 }
                 else {
-                    commonLocTree.put(m,1);
+                    commonLocTree.put(m,new boolean[individuals.length]);
+                    commonLocTree.get(m)[numIndividual] = true;
                 }
             }
+            numIndividual++;
         }
+
         // update counts in commonLocTree with unsequenced mutations
         // If more than one mutation exists at unsequenced location, all counts are updated
-        for (Mutation m : unsequencedMuts) {
-            for (Mutation mTree : commonLocTree.keySet()) {
-                if (mTree.equalsOrUnsequenced(m)) {
-                    commonLocTree.put(mTree,commonLocTree.get(mTree) + 1);
+        for (Mutation m : unsequencedMuts.keySet()) {
+            for (Mutation mSeq : commonLocTree.keySet()) {
+                if (m.equalsOrUnsequenced(mSeq)) {
+                    for (Integer in : unsequencedMuts.get(m)) {
+                        commonLocTree.get(mSeq)[in] = true;
+                    }
                 }
             }
         }
@@ -135,10 +183,21 @@ public class FamilyDataGroup {
         // Note: Common locs may contain same mutations with different transcripts (8/1/2014)
         commonLocs = new ArrayList<Mutation> ();
         for (Mutation m : commonLocTree.keySet()) {
-            if (commonLocTree.get(m).equals(individuals.length)) {
+            boolean[] temp = commonLocTree.get(m);
+            boolean addToCommon = true;
+            for (boolean b : temp) {
+                if (!b) {
+                    addToCommon = false;
+                    break;
+                }
+            }
+            if (addToCommon) {
                 commonLocs.add(m);
             }
         }
+
+        // TODO: REMOVE
+        System.out.println("size of common locs is " + commonLocs.size());
 
     }
 
@@ -147,22 +206,37 @@ public class FamilyDataGroup {
      */
     public void setCommonGenes(Flags flags) {
         commonGenes = new TreeMap<String, ArrayList<Mutation>>();
+        TreeMap<String, ArrayList<Mutation>> mutCount = new TreeMap<String, ArrayList<Mutation>>();
         for (Mutation m : commonLocs) {
             if (!commonGenes.containsKey(m.gene)) {
                 commonGenes.put(m.gene,new ArrayList<Mutation>());
+                mutCount.put(m.gene, new ArrayList<Mutation>());
             }
             commonGenes.get(m.gene).add(m);
+
+            // For purposes of recessive filtering below
+            boolean inTree = false;
+            for (Mutation mCount : mutCount.get(m.gene)) {
+                if (mCount.equalsOrUnsequenced(m) || mCount.equalsMutation(m)) {
+                    inTree = true;
+                    break;
+                }
+            }
+            if (!inTree) {
+                mutCount.get(m.gene).add(m);
+            }
         }
 
         // if recessive, non-consanguineous, then cut out all non-X genes that have < 2 mutations
-        if (flags.RECESSIVE && (flags.CONSANGUINEOUS < 0)) {
+        if (flags.RECESSIVE && (!consanguineous)) {
 
             ArrayList<String> keysToKeep = new ArrayList<String>();
             for (String gene : commonGenes.keySet()) {
                 if (commonGenes.get(gene).get(0).chromosome.equalsIgnoreCase("x")) {
                     keysToKeep.add(gene);
                 }
-                else if (commonGenes.get(gene).size() > 1) {
+                else if (mutCount.get(gene).size() > 1) {
+                    // check to make sure each mutation is distinct (not just different transcript)
                     keysToKeep.add(gene);
                 }
             }

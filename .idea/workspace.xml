@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12db0c7d-b78b-4b68-ac4f-8c0372b2744e" name="Default" comment="" />
+    <list default="true" id="12db0c7d-b78b-4b68-ac4f-8c0372b2744e" name="Default" comment="Initial commit&#10;">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/bug1126.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/example.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/test.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/CmToMbMap.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/CmToMbMap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/CrossReference.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/CrossReference.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/ExonRead.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/ExonRead.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/FamilyDataGroup.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/FamilyDataGroup.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/Filter.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/Filter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/FilterProgram.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/FilterProgram.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/Flags.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/Flags.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/HomozygousRegions.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/HomozygousRegions.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/InheritanceFilter.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/InheritanceFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/Mutation.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/Mutation.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MutationFilter.iml" afterPath="$PROJECT_DIR$/MutationFilter.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/MutationTypeFilter.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/MutationTypeFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/QualityFilter.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/QualityFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/SnpFilter.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/SnpFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/TabFileWriter.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/TabFileWriter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jython.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jython.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="MutationFilter.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,60 +87,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="Flags.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/Flags.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="45" column="24" selection-start="1446" selection-end="1460" vertical-scroll-proportion="157.46153" vertical-offset="4769" max-vertical-offset="5400">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Filter.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/Filter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="23" selection-start="771" selection-end="771" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+            <state line="14" column="63" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0" vertical-offset="92" max-vertical-offset="540">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HomozygousRegions.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/HomozygousRegions.java">
+      <file leaf-file-name="SnpFilter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/SnpFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="58" selection-start="2710" selection-end="2710" vertical-scroll-proportion="0.0" vertical-offset="2113" max-vertical-offset="2790">
+            <state line="31" column="9" selection-start="968" selection-end="968" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1380">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FilterProgram.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/FilterProgram.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="265" column="86" selection-start="12087" selection-end="12087" vertical-scroll-proportion="5.986446" vertical-offset="0" max-vertical-offset="5160">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1724#1732#0" expanded="true" />
-                <element signature="e#2799#2820#0" expanded="true" />
-                <element signature="e#3037#3047#0" expanded="true" />
-                <element signature="e#9718#9785#0" expanded="true" />
-                <element signature="e#9839#9847#0" expanded="true" />
-                <element signature="e#12028#12087#0" expanded="true" />
-                <element signature="e#14760#14768#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TabFileWriter.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/TabFileWriter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="581" selection-end="581" vertical-scroll-proportion="0.0" vertical-offset="43" max-vertical-offset="720">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExonRead.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/ExonRead.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="75" selection-start="2394" selection-end="2394" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1980">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -125,42 +119,65 @@
       <file leaf-file-name="FamilyDataGroup.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/FamilyDataGroup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="5" selection-start="5682" selection-end="5682" vertical-scroll-proportion="0.0" vertical-offset="1560" max-vertical-offset="2685">
+            <state line="22" column="55" selection-start="686" selection-end="686" vertical-scroll-proportion="0.0" vertical-offset="186" max-vertical-offset="3855">
               <folding>
-                <element signature="e#2130#2157#0" expanded="true" />
-                <element signature="e#2900#2927#0" expanded="true" />
-                <element signature="e#4306#4324#0" expanded="true" />
-                <element signature="e#4387#4397#0" expanded="true" />
-                <element signature="e#6406#6414#0" expanded="true" />
-                <element signature="e#6865#6894#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#5924#5954#0" expanded="true" />
+                <element signature="e#8307#8336#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Mutation.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/Mutation.java">
+      <file leaf-file-name="InheritanceFilter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/InheritanceFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="20" selection-start="2029" selection-end="2029" vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="2385">
+            <state line="102" column="0" selection-start="3838" selection-end="3838" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1665">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Flags.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/Flags.java">
+      <file leaf-file-name="CmToMbMap.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/CmToMbMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="280" column="36" selection-start="10039" selection-end="10039" vertical-scroll-proportion="0.0" vertical-offset="3975" max-vertical-offset="4860">
+            <state line="49" column="0" selection-start="1914" selection-end="1914" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1740">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1417#1433#0" expanded="true" />
+                <element signature="e#2528#2544#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomozygousRegions.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/HomozygousRegions.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="187" column="104" selection-start="7886" selection-end="7886" vertical-scroll-proportion="0.0" vertical-offset="2541" max-vertical-offset="4545">
+              <folding>
+                <element signature="e#3174#3184#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QualityFilter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/QualityFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="31" selection-start="1236" selection-end="1236" vertical-scroll-proportion="0.0" vertical-offset="497" max-vertical-offset="930">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CrossReference.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CrossReference.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/CrossReference.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="40" selection-start="3800" selection-end="3800" vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="1725">
-              <folding />
+            <state line="65" column="49" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.4364896" vertical-offset="786" max-vertical-offset="1890">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -168,7 +185,7 @@
       <file leaf-file-name="TabFileReader.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/TabFileReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="36" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.0" vertical-offset="13" max-vertical-offset="690">
+            <state line="34" column="36" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="735">
               <folding />
             </state>
           </provider>
@@ -181,33 +198,37 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/com/example/mutationfilter/TabFileReader.java" />
         <option value="$PROJECT_DIR$/src/com/example/mutationfilter/GenericFilter.java" />
         <option value="$PROJECT_DIR$/src/com/example/mutationfilter/BST.java" />
-        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/CmToMbMap.java" />
-        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/SnpFilter.java" />
-        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/MutationTypeFilter.java" />
-        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/QualityFilter.java" />
-        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/HomozygousRegions.java" />
-        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/Filter.java" />
+        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/TabFileWriter.java" />
         <option value="$PROJECT_DIR$/src/com/example/mutationfilter/ExonRead.java" />
         <option value="$PROJECT_DIR$/src/com/example/mutationfilter/Mutation.java" />
-        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/InheritanceFilter.java" />
-        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/TabFileWriter.java" />
         <option value="$PROJECT_DIR$/src/com/example/mutationfilter/Flags.java" />
-        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/CrossReference.java" />
-        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/FamilyDataGroup.java" />
+        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/Filter.java" />
+        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/MutationTypeFilter.java" />
+        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/QualityFilter.java" />
+        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/SnpFilter.java" />
+        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/InheritanceFilter.java" />
         <option value="$PROJECT_DIR$/src/com/example/mutationfilter/FilterProgram.java" />
+        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/HomozygousRegions.java" />
+        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/CmToMbMap.java" />
+        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/FamilyDataGroup.java" />
+        <option value="$PROJECT_DIR$/src/com/example/mutationfilter/CrossReference.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="6" />
     <option name="y" value="22" />
     <option name="width" value="1440" />
-    <option name="height" value="820" />
+    <option name="height" value="813" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -270,7 +291,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -297,6 +318,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -308,26 +330,6 @@
               <option name="myItemId" value="External Libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jython" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MutationFilter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MutationFilter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -336,30 +338,11 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="MutationFilter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MutationFilter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MutationFilter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mutationfilter" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -374,37 +357,103 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="project.structure.last.edited" value="SDKs" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../IdeaProjects/jython2.5.2" />
+    <property name="last_opened_file_path" value="$USER_HOME$/jython2.2.1/jython.jar!/" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="140" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="142" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="146" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="940" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="140" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="142" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="146" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="940" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
-  <component name="RunManager">
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.FilterProgram">
+    <configuration default="false" name="FilterProgram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.mutationfilter.FilterProgram" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/../../Cambridge Medical Genetics/JavaTests/InputFiles/BGI_11-12_input.txt&quot; &quot;$PROJECT_DIR$/../../Cambridge Medical Genetics/JavaTests/OutputFiles/BGI_11-13_homo&quot; -filters in,q -d=10" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="MutationFilter" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
       <option name="PROGRAM_PARAMETERS" />
       <method />
     </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Demo" />
+      <option name="SCRIPT_NAME" value="" />
       <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="USE_COMMAND_LINE" value="true" />
-      <option name="COMMAND_LINE" value="" />
-      <option name="WIPE_USER_DATA" value="false" />
-      <option name="DISABLE_BOOT_ANIMATION" value="false" />
-      <option name="NETWORK_SPEED" value="full" />
-      <option name="NETWORK_LATENCY" value="none" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Demo" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -455,18 +504,23 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
       <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Demo" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -489,6 +543,97 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Demo" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Demo" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Demo" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
       <module name="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -508,7 +653,14 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <list size="0" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.FilterProgram" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.FilterProgram" />
+      </list>
+    </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
@@ -541,30 +693,31 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="820" extended-state="6" />
+    <frame x="6" y="22" width="1440" height="813" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32871014" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32871014" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32871014" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26323318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32871014" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -581,6 +734,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="Initial commit&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -590,6 +745,182 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/GenericFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="2" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/MutationTypeFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="23" selection-start="904" selection-end="904" vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1110">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/TabFileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="26" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="705">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/FilterProgram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="328" column="67" selection-start="15156" selection-end="15156" vertical-scroll-proportion="0.0" vertical-offset="4920" max-vertical-offset="5415">
+          <folding>
+            <element signature="e#11505#11572#0" expanded="true" />
+            <element signature="e#11626#11634#0" expanded="true" />
+            <element signature="e#14831#14890#0" expanded="true" />
+            <element signature="e#17328#17368#0" expanded="true" />
+            <element signature="e#17616#17626#0" expanded="true" />
+            <element signature="e#18297#18339#0" expanded="true" />
+            <element signature="e#19583#19591#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/FamilyDataGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="145" column="90" selection-start="5792" selection-end="5792" vertical-scroll-proportion="0.0" vertical-offset="2175" max-vertical-offset="3195">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5924#5954#0" expanded="true" />
+            <element signature="e#8307#8336#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/ExonRead.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="40" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1965">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/Mutation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="119" column="35" selection-start="3985" selection-end="3985" vertical-scroll-proportion="0.0" vertical-offset="131" max-vertical-offset="2580">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/Flags.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="230" column="0" selection-start="8195" selection-end="8195" vertical-scroll-proportion="0.0" vertical-offset="3450" max-vertical-offset="5070">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/CrossReference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="49" selection-start="3865" selection-end="3865" vertical-scroll-proportion="0.0" vertical-offset="1425" max-vertical-offset="1905">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/TabFileReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="36" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="735">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/SnpFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="73" selection-start="1482" selection-end="1482" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1380">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/GenericFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="2" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="300">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/MutationTypeFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="23" selection-start="904" selection-end="904" vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1110">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/TabFileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="0" selection-start="581" selection-end="581" vertical-scroll-proportion="0.0" vertical-offset="43" max-vertical-offset="720">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/FilterProgram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="125" column="27" selection-start="5051" selection-end="5051" vertical-scroll-proportion="0.0" vertical-offset="1800" max-vertical-offset="5265">
+          <folding>
+            <element signature="e#11505#11572#0" expanded="true" />
+            <element signature="e#11626#11634#0" expanded="true" />
+            <element signature="e#14831#14890#0" expanded="true" />
+            <element signature="e#17328#17368#0" expanded="true" />
+            <element signature="e#17616#17626#0" expanded="true" />
+            <element signature="e#18297#18339#0" expanded="true" />
+            <element signature="e#19583#19591#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/ExonRead.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="40" selection-start="403" selection-end="403" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1965">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/Mutation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="39" selection-start="2339" selection-end="2339" vertical-scroll-proportion="0.0" vertical-offset="855" max-vertical-offset="2385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/Flags.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="230" column="0" selection-start="8195" selection-end="8195" vertical-scroll-proportion="0.0" vertical-offset="3356" max-vertical-offset="5070">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/CrossReference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="40" selection-start="3800" selection-end="3800" vertical-scroll-proportion="0.0" vertical-offset="1455" max-vertical-offset="1785">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/TabFileReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="36" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="735">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/QualityFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="23" selection-start="846" selection-end="846" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
@@ -622,14 +953,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="125" column="0" selection-start="5134" selection-end="5134" vertical-scroll-proportion="0.0" vertical-offset="1875" max-vertical-offset="2805">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1724#1732#0" expanded="true" />
-            <element signature="e#2799#2820#0" expanded="true" />
-            <element signature="e#3037#3047#0" expanded="true" />
-            <element signature="e#9718#9785#0" expanded="true" />
-            <element signature="e#9839#9847#0" expanded="true" />
-            <element signature="e#12028#12087#0" expanded="true" />
-            <element signature="e#14760#14768#0" expanded="true" />
+            <element signature="e#11505#11572#0" expanded="true" />
+            <element signature="e#11626#11634#0" expanded="true" />
+            <element signature="e#14831#14890#0" expanded="true" />
+            <element signature="e#17328#17368#0" expanded="true" />
+            <element signature="e#17616#17626#0" expanded="true" />
+            <element signature="e#18297#18339#0" expanded="true" />
+            <element signature="e#19583#19591#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -638,12 +968,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="48" selection-start="1842" selection-end="1842" vertical-scroll-proportion="0.0" vertical-offset="765" max-vertical-offset="1620">
           <folding>
-            <element signature="e#2130#2157#0" expanded="true" />
-            <element signature="e#2900#2927#0" expanded="true" />
-            <element signature="e#4306#4324#0" expanded="true" />
-            <element signature="e#4387#4397#0" expanded="true" />
-            <element signature="e#6406#6414#0" expanded="true" />
-            <element signature="e#6865#6894#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#5924#5954#0" expanded="true" />
+            <element signature="e#8307#8336#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -658,89 +985,24 @@
     <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/Flags.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="230" column="144" selection-start="8197" selection-end="8197" vertical-scroll-proportion="0.0" vertical-offset="3450" max-vertical-offset="4575">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/CrossReference.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="98" selection-start="774" selection-end="774" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1725">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/TabFileReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="36" selection-start="1012" selection-end="1012" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="735">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/GenericFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="2" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/SnpFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="23" selection-start="933" selection-end="933" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/MutationTypeFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="23" selection-start="904" selection-end="904" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/CmToMbMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="73" selection-start="834" selection-end="834" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1388#1404#0" expanded="true" />
-            <element signature="e#2421#2437#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/QualityFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="23" selection-start="846" selection-end="846" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/ExonRead.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="75" selection-start="2394" selection-end="2394" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="1980">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/Filter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="23" selection-start="771" selection-end="771" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/HomozygousRegions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="58" selection-start="2710" selection-end="2710" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/InheritanceFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="104" selection-start="650" selection-end="650" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1575">
           <folding />
         </state>
       </provider>
@@ -752,62 +1014,147 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/Mutation.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/GenericFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="20" selection-start="2029" selection-end="2029" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2385">
+        <state line="10" column="2" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MutationFilter.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="670">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/javax/script/ScriptEngineManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="2113" selection-end="2113" vertical-scroll-proportion="0.7921478" vertical-offset="287" max-vertical-offset="720">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/TabFileWriter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="581" selection-end="581" vertical-scroll-proportion="0.0" vertical-offset="43" max-vertical-offset="720">
+        <state line="36" column="26" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="660">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/Flags.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/ExonRead.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="280" column="36" selection-start="10039" selection-end="10039" vertical-scroll-proportion="0.0" vertical-offset="3660" max-vertical-offset="4860">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/FamilyDataGroup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="5" selection-start="5682" selection-end="5682" vertical-scroll-proportion="0.0" vertical-offset="1560" max-vertical-offset="2685">
+        <state line="61" column="61" selection-start="3708" selection-end="3708" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="3495">
           <folding>
-            <element signature="e#2130#2157#0" expanded="true" />
-            <element signature="e#2900#2927#0" expanded="true" />
-            <element signature="e#4306#4324#0" expanded="true" />
-            <element signature="e#4387#4397#0" expanded="true" />
-            <element signature="e#6406#6414#0" expanded="true" />
-            <element signature="e#6865#6894#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/CrossReference.java">
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/Mutation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="40" selection-start="3800" selection-end="3800" vertical-scroll-proportion="0.0" vertical-offset="1005" max-vertical-offset="1725">
+        <state line="145" column="28" selection-start="4813" selection-end="4813" vertical-scroll-proportion="0.0" vertical-offset="2031" max-vertical-offset="3015">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/Filter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="63" selection-start="456" selection-end="456" vertical-scroll-proportion="0.0" vertical-offset="92" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/MutationTypeFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="24" selection-start="929" selection-end="929" vertical-scroll-proportion="0.0" vertical-offset="167" max-vertical-offset="1110">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/QualityFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="31" selection-start="1236" selection-end="1236" vertical-scroll-proportion="0.0" vertical-offset="497" max-vertical-offset="930">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/SnpFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="9" selection-start="968" selection-end="968" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="1380">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/HomozygousRegions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="187" column="104" selection-start="7886" selection-end="7886" vertical-scroll-proportion="0.0" vertical-offset="2541" max-vertical-offset="4545">
+          <folding>
+            <element signature="e#3174#3184#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/CmToMbMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="0" selection-start="1914" selection-end="1914" vertical-scroll-proportion="0.0" vertical-offset="1146" max-vertical-offset="1740">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1417#1433#0" expanded="true" />
+            <element signature="e#2528#2544#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/InheritanceFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="0" selection-start="3838" selection-end="3838" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1665">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/FilterProgram.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="265" column="86" selection-start="12087" selection-end="12087" vertical-scroll-proportion="5.986446" vertical-offset="0" max-vertical-offset="5160">
+        <state line="125" column="0" selection-start="5218" selection-end="5218" vertical-scroll-proportion="0.0" vertical-offset="1420" max-vertical-offset="6645">
+          <folding>
+            <element signature="e#11505#11572#0" expanded="true" />
+            <element signature="e#11626#11634#0" expanded="true" />
+            <element signature="e#14831#14890#0" expanded="true" />
+            <element signature="e#17328#17368#0" expanded="true" />
+            <element signature="e#17616#17626#0" expanded="true" />
+            <element signature="e#18297#18339#0" expanded="true" />
+            <element signature="e#19583#19591#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/Flags.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="24" selection-start="1446" selection-end="1460" vertical-scroll-proportion="157.46153" vertical-offset="4769" max-vertical-offset="5400">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1724#1732#0" expanded="true" />
-            <element signature="e#2799#2820#0" expanded="true" />
-            <element signature="e#3037#3047#0" expanded="true" />
-            <element signature="e#9718#9785#0" expanded="true" />
-            <element signature="e#9839#9847#0" expanded="true" />
-            <element signature="e#12028#12087#0" expanded="true" />
-            <element signature="e#14760#14768#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/FamilyDataGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="55" selection-start="686" selection-end="686" vertical-scroll-proportion="0.0" vertical-offset="186" max-vertical-offset="3855">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5924#5954#0" expanded="true" />
+            <element signature="e#8307#8336#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/CrossReference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="49" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.4364896" vertical-offset="786" max-vertical-offset="1890">
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -829,7 +1176,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited>Python</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -841,6 +1188,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Python 2.7.5 (/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python) interpreter library</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -864,12 +1212,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>MutationFilter</last-edited>
+          <last-edited>Python|MutationFilter</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -877,6 +1224,7 @@
       </state>
       <state key="ProjectJDKs.UI">
         <settings>
+          <last-edited>Python 2.7.5 (/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python)</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -888,6 +1236,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>jython</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
