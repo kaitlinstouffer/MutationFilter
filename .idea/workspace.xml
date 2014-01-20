@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="12db0c7d-b78b-4b68-ac4f-8c0372b2744e" name="Default" comment="Initial commit&#10;">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/bug1126.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/example.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/test.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/CmToMbMap.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/CmToMbMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/CrossReference.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/CrossReference.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/ExonRead.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/ExonRead.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/FamilyDataGroup.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/FamilyDataGroup.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/Filter.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/Filter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/FilterProgram.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/FilterProgram.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/Flags.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/Flags.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/HomozygousRegions.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/HomozygousRegions.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/InheritanceFilter.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/InheritanceFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/Mutation.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/Mutation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MutationFilter.iml" afterPath="$PROJECT_DIR$/MutationFilter.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/MutationTypeFilter.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/MutationTypeFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/QualityFilter.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/QualityFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/SnpFilter.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/SnpFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/TabFileWriter.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/TabFileWriter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/jython.xml" afterPath="$PROJECT_DIR$/.idea/libraries/jython.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="12db0c7d-b78b-4b68-ac4f-8c0372b2744e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MutationFilter.iws" />
@@ -690,6 +669,11 @@
       <created>1385403949979</created>
       <updated>1385403949979</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial commit&#10;">
+      <created>1390231985031</created>
+      <updated>1390231985031</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
