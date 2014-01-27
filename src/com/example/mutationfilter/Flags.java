@@ -24,10 +24,11 @@ public class Flags {
     // Instance Variables
 
     // Header Values: if has -1 as the index for a header string, then not in file
-    //POS, DEPTH, PASS, SNP, GENE, HOMO, MUT_TYPE, TRANSCRIPT, GMAF, REF
+    //POS, DEPTH, PASS, SNP, GENE, HOMO, MUT_TYPE, TRANSCRIPT, GMAF, REF, QUALITY
     public int POS = -1;
     public int DEPTH = -1;
     public int PASS = -1;
+    public int QUALITY = -1;
     public int SNP = -1;
     public int GENE = -1;
     public int HOMO = -1;
@@ -47,7 +48,8 @@ public class Flags {
     public ArrayList<Integer> CONSANGUINEOUS_FAMILIES = null;
     public double SNP_FREQ = 0.0;
     public String[] CROSS_REF_DIR;
-    public int DEPTH_CUTOFF = -1; // if none given, then defaults to 10 for non-consanguineous and 20 for consanguineous
+    public int DEPTH_CUTOFF = -1; // if none given, then defaults to 10 for consanguineous and 20 for non-consanguineous
+    public int QUALITY_CUTOFF = 100; // if none given, then defaults to 100 for all individuals
     public boolean RS_ONLY = false; // only consider snps with rsIDs to be snps
     public int REF_CUTOFF = 1;
     public int NUM_EXON_READ = -1;
@@ -86,6 +88,7 @@ public class Flags {
         POS = -1;
         DEPTH = -1;
         PASS = -1;
+        QUALITY = -1;
         SNP = -1;
         GENE = -1;
         HOMO = -1;
@@ -124,6 +127,9 @@ public class Flags {
             }
             else if (headerCols[i].equals("Change") || headerCols[i].equals("change")) {
                 REF = i;
+            }
+            else if (headerCols[i].contains("core")) {
+                QUALITY = i;
             }
         }
     }
@@ -175,6 +181,11 @@ public class Flags {
             else if (s.contains("-d=")) {
                 // parse integer
                 DEPTH_CUTOFF = Integer.parseInt(s.substring(3));
+            }
+
+            else if (s.contains("-q=")) {
+                // parse integer
+                QUALITY_CUTOFF = Integer.parseInt(s.substring(3));
             }
 
             // X Linked
@@ -319,7 +330,8 @@ public class Flags {
                 System.out.println("Options");
                 System.out.println("----------");
                 System.out.println("Flag Format \t Description");
-                System.out.println("-d= \t Retain mutations sequenced with coverage greater than or equal to d.  Default is 20 for consanguineous and 10 otherwise.");
+                System.out.println("-d= \t Retain mutations sequenced with coverage greater than or equal to d.  Default is 10 for consanguineous and 20 otherwise.");
+                System.out.println("-q= \t Retain mutations sequenced with score greater than or equal to q.  Default is 100 for all families.  Set to 0 if don't want to filter by quality score in quality filter.");
                 System.out.println("-Ext \t Retain mutations of type Frameshift, Splice_Site, or Stop_gained/lost only.");
                 System.out.println("-Mut_Type {m,s,fs,ss} \t Retain mutations only of types specified (missense, stop, frameshift, splice_site)");
                 System.out.println("-x \t X linked disease. Default is false.  Returns homozygous mutations on X chromosome only.  All input files assumed to be male.");

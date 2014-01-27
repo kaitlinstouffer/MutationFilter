@@ -30,8 +30,9 @@ public class QualityFilter implements Filter {
         }
 
         int depthCutOff = flags.DEPTH_CUTOFF;
+        int qualityCutOff = flags.QUALITY_CUTOFF;
 
-        // Filter off of both Depth and PASSING filter (depth must be greater than cutoff and PASS must not be hard to validate)
+        // Filter off of both Depth, PASSING filter, and quality (depth must be greater than cutoff, quality greater than cutoff, and PASS must not be hard to validate)
         if (flags.DEPTH_CUTOFF < 0) {
             if (family.consanguineous) {
                 depthCutOff = 10;
@@ -45,6 +46,12 @@ public class QualityFilter implements Filter {
             if (flags.PASS > 0) {
                 if (!tabRow[flags.PASS].equalsIgnoreCase("HARD_TO_VALIDATE")) {
                      return true;
+                }
+                return false;
+            }
+            if (flags.QUALITY > 0) {
+                if (Integer.parseInt(tabRow[flags.QUALITY]) >= qualityCutOff) {
+                    return true;
                 }
                 return false;
             }
