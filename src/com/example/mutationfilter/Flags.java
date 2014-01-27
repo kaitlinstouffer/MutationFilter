@@ -154,7 +154,7 @@ public class Flags {
             else if (s.equals("-Mut_Type")) {
                 if ((i+1) < args.length) {
                     i++;
-                    String[] mutTypes = args[i].split(",");
+                    String[] mutTypes = args[i].split(";");
                     for (String m : mutTypes) {
                         if (m.equals("m")) {
                             MISSENSE = true;
@@ -246,7 +246,7 @@ public class Flags {
             else if (s.equals("-cFam")) {
                 if ((i+1) < args.length) {
                     i++;
-                    String[] dirs = args[i].split(",");
+                    String[] dirs = args[i].split(";");
                     CONSANGUINEOUS_FAMILIES = new ArrayList<Integer>();
                     for (String fam : dirs) {
                         CONSANGUINEOUS_FAMILIES.add(Integer.parseInt(fam));
@@ -297,7 +297,7 @@ public class Flags {
 
                 if ((i+1) < args.length) {
                     i++;
-                    String[] filters = args[i].split(",");
+                    String[] filters = args[i].split(";");
                     for (String m : filters) {
                         if (m.equals("q")) {
                             FILTER_QUALITY = true;
@@ -333,16 +333,16 @@ public class Flags {
                 System.out.println("-d= \t Retain mutations sequenced with coverage greater than or equal to d.  Default is 10 for consanguineous and 20 otherwise.");
                 System.out.println("-q= \t Retain mutations sequenced with score greater than or equal to q.  Default is 100 for all families.  Set to 0 if don't want to filter by quality score in quality filter.");
                 System.out.println("-Ext \t Retain mutations of type Frameshift, Splice_Site, or Stop_gained/lost only.");
-                System.out.println("-Mut_Type {m,s,fs,ss} \t Retain mutations only of types specified (missense, stop, frameshift, splice_site)");
+                System.out.println("-Mut_Type {m;s;fs;ss} \t Retain mutations only of types specified (missense, stop, frameshift, splice_site)");
                 System.out.println("-x \t X linked disease. Default is false.  Returns homozygous mutations on X chromosome only.  All input files assumed to be male.");
                 System.out.println("-r \t Recessive disease.  Default is Dominant.");
                 System.out.println("-c= \t Consanguineous Individuals.  Retain mutations within homozygous regions of specified cM. (Note: applied to all families unless cFam is specified.)");
-                System.out.println("-cFam {in1,in2,in3....(in : 0 to #families-1) \t Indicates which families are consanguineous if -c= flag is specified.  Note: same cM distance applied to all consanguineous families.");
+                System.out.println("-cFam {in1;in2;in3....(in : 0 to #families-1) \t Indicates which families are consanguineous if -c= flag is specified.  Note: same cM distance applied to all consanguineous families.");
                 System.out.println("-rs \t Consider only snps with an rsID in filtering for known snps.  Default is to consider all Ids.");
                 System.out.println("-snpF= \t Retain mutations, if common snps, with a frequency less than this.  Default is 0.");
                 System.out.println("-ref {dir1;dir2;dir3...} \t Reference Directories to cross reference mutations in candidate individuals against.");
                 System.out.println("-ref_cutoff= \t Cutoff for Cross Reference.  Eliminate mutations if found in at least this many individuals.  Default is 1.");
-                System.out.println("-filters {q,snp,in,mt} \t Specify which filters to use.  Default is to use all filters (quality, snps, inheritance pattern (homo/heterozygous), mutation type (all non-intronic and non-synonymous))");
+                System.out.println("-filters {q;snp;in;mt} \t Specify which filters to use.  Default is to use all filters (quality, snps, inheritance pattern (homo/heterozygous), mutation type (all non-intronic and non-synonymous))");
                 System.out.println("-exonRead=# \t Consider mutations that occur in at least # individuals and check bam files to see if these locations are unread in other individuals.");
                 System.out.println("-bamRef {filename} \t File name with list of bam files in same format as list of tab-separated files.");
                 //System.out.println("-bamRef {dir} \t Read Bam Files from within this directory.  Names of Bam files assumed to be same as roots of *.annot.tab");
