@@ -45,13 +45,14 @@ public class QualityFilter implements Filter {
         if (Integer.parseInt(tabRow[flags.DEPTH]) >= depthCutOff) {
             if (flags.PASS > 0) {
                 if (!tabRow[flags.PASS].equalsIgnoreCase("HARD_TO_VALIDATE")) {
+                    if (flags.QUALITY > 0) {
+
+                        if (Double.parseDouble(tabRow[flags.QUALITY]) >= qualityCutOff) {
+                                return true;
+                        }
+                        return false;
+                    }
                      return true;
-                }
-                return false;
-            }
-            if (flags.QUALITY > 0) {
-                if (Integer.parseInt(tabRow[flags.QUALITY]) >= qualityCutOff) {
-                    return true;
                 }
                 return false;
             }

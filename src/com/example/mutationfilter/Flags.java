@@ -128,7 +128,7 @@ public class Flags {
             else if (headerCols[i].equals("Change") || headerCols[i].equals("change")) {
                 REF = i;
             }
-            else if (headerCols[i].contains("core")) {
+            else if (headerCols[i].equals("Score")) {
                 QUALITY = i;
             }
         }

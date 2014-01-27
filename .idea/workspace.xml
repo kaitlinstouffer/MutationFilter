@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12db0c7d-b78b-4b68-ac4f-8c0372b2744e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ExonReads/exonRefFormatted_ccds.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/Flags.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/Flags.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/example/mutationfilter/QualityFilter.java" afterPath="$PROJECT_DIR$/src/com/example/mutationfilter/QualityFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ExonReads/exonCoordinateParser.pl" afterPath="$PROJECT_DIR$/ExonReads/exonCoordinateParser.pl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MutationFilter.iws" />
@@ -97,12 +95,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExonRead.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/ExonRead.java">
+      <file leaf-file-name="FilterProgram.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/FilterProgram.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="39" selection-start="4415" selection-end="4415" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="3495">
+            <state line="114" column="0" selection-start="4788" selection-end="4788" vertical-scroll-proportion="0.0" vertical-offset="1435" max-vertical-offset="6645">
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#11505#11572#0" expanded="true" />
+                <element signature="e#11626#11634#0" expanded="true" />
+                <element signature="e#14831#14890#0" expanded="true" />
+                <element signature="e#17328#17368#0" expanded="true" />
+                <element signature="e#17616#17626#0" expanded="true" />
+                <element signature="e#19583#19591#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,7 +138,7 @@
       <file leaf-file-name="QualityFilter.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/QualityFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="13" selection-start="1631" selection-end="1631" vertical-scroll-proportion="0.4642857" vertical-offset="555" max-vertical-offset="1035">
+            <state line="47" column="44" selection-start="1580" selection-end="1580" vertical-scroll-proportion="0.71428573" vertical-offset="405" max-vertical-offset="1050">
               <folding />
             </state>
           </provider>
@@ -144,7 +147,7 @@
       <file leaf-file-name="Flags.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/Flags.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="147" column="28" selection-start="5095" selection-end="5095" vertical-scroll-proportion="0.0" vertical-offset="1815" max-vertical-offset="5580">
+            <state line="130" column="44" selection-start="4339" selection-end="4339" vertical-scroll-proportion="0.0" vertical-offset="1710" max-vertical-offset="5580">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -391,7 +394,7 @@
     <configuration default="false" name="FilterProgram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.mutationfilter.FilterProgram" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/../../Cambridge Medical Genetics/JavaTests/InputFiles/D40_15-16_input.txt&quot; &quot;$PROJECT_DIR$/../../Cambridge Medical Genetics/JavaTests/OutputFiles/D40_15-16&quot; -r -c=1" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/../../Cambridge Medical Genetics/JavaTests/InputFiles/BGI_5-9_input.txt&quot; &quot;$PROJECT_DIR$/../../Cambridge Medical Genetics/JavaTests/OutputFiles/BGI_5-9&quot; -r -q=2500" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
@@ -701,7 +704,11 @@
       <created>1390232621543</created>
       <updated>1390232621543</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="test commit&#10;# Please enter the commit message for your changes. Lines starting&#10;# with '#' will be ignored, and an empty message aborts the commit.&#10;# On branch master&#10;# Changes to be committed:&#10;#   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)&#10;#&#10;#&#9;new file:   jython-engine.jar&#10;#&#9;new file:   jythonlib.jar&#10;#&#10;# Changes not staged for commit:&#10;#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)&#10;#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)&#10;#&#10;#&#9;modified:   .DS_Store&#10;#&#9;modified:   .idea/workspace.xml&#10;#&#9;modified:   ExonReads/.DS_Store&#10;#&#9;modified:   src/.DS_Store&#10;#&#10;# Untracked files:&#10;#   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)&#10;#&#10;#&#9;.idea/libraries/jython_engine.xml&#10;#&#9;EGG-INFO/&#10;#&#9;ExonReads/reads_only_locs2.py&#10;#&#9;ExonReads/reads_only_locs_java.py&#10;#&#9;bamLocs.txt&#10;#&#9;genetic_map_HapMapII_GRCh37/.DS_Store&#10;#&#9;out/&#10;#&#9;pysam/&#10;#&#9;src/com/example/mutationfilter/CmToMbMap.class&#10;#&#9;src/com/example/mutationfilter/CrossReference.class&#10;#&#9;src/com/example/mutationfilter/ExonRead.class&#10;#&#9;src/com/example/mutationfilter/FamilyDataGroup.class&#10;#&#9;src/com/example/mutationfilter/Filter.class&#10;#&#9;src/com/example/mutationfilter/FilterProgram.class&#10;#&#9;src/com/example/mutationfilter/Flags.class&#10;#&#9;src/com/example/mutationfilter/GenericFilter.class&#10;#&#9;src/com/example/mutationfilter/HomozygousRegions$EndPoints.class&#10;#&#9;src/com/example/mutationfilter/HomozygousRegions.class&#10;#&#9;src/com/example/mutationfilter/InheritanceFilter.class&#10;#&#9;src/com/example/mutationfilter/Mutation.class&#10;#&#9;src/com/example/mutationfilter/MutationTypeFilter.class&#10;#&#9;src/com/example/mutationfilter/QualityFilter.class&#10;#&#9;src/com/example/mutationfilter/SnpFilter.class&#10;#&#9;src/com/example/mutationfilter/TabFileReader.class&#10;#&#9;src/com/example/mutationfilter/TabFileWriter.class&#10;">
+      <created>1390831217571</created>
+      <updated>1390831217571</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -747,7 +754,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="Initial commit&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit&#10;" />
+    <MESSAGE value="test commit&#10;# Please enter the commit message for your changes. Lines starting&#10;# with '#' will be ignored, and an empty message aborts the commit.&#10;# On branch master&#10;# Changes to be committed:&#10;#   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)&#10;#&#10;#&#9;new file:   jython-engine.jar&#10;#&#9;new file:   jythonlib.jar&#10;#&#10;# Changes not staged for commit:&#10;#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)&#10;#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)&#10;#&#10;#&#9;modified:   .DS_Store&#10;#&#9;modified:   .idea/workspace.xml&#10;#&#9;modified:   ExonReads/.DS_Store&#10;#&#9;modified:   src/.DS_Store&#10;#&#10;# Untracked files:&#10;#   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)&#10;#&#10;#&#9;.idea/libraries/jython_engine.xml&#10;#&#9;EGG-INFO/&#10;#&#9;ExonReads/reads_only_locs2.py&#10;#&#9;ExonReads/reads_only_locs_java.py&#10;#&#9;bamLocs.txt&#10;#&#9;genetic_map_HapMapII_GRCh37/.DS_Store&#10;#&#9;out/&#10;#&#9;pysam/&#10;#&#9;src/com/example/mutationfilter/CmToMbMap.class&#10;#&#9;src/com/example/mutationfilter/CrossReference.class&#10;#&#9;src/com/example/mutationfilter/ExonRead.class&#10;#&#9;src/com/example/mutationfilter/FamilyDataGroup.class&#10;#&#9;src/com/example/mutationfilter/Filter.class&#10;#&#9;src/com/example/mutationfilter/FilterProgram.class&#10;#&#9;src/com/example/mutationfilter/Flags.class&#10;#&#9;src/com/example/mutationfilter/GenericFilter.class&#10;#&#9;src/com/example/mutationfilter/HomozygousRegions$EndPoints.class&#10;#&#9;src/com/example/mutationfilter/HomozygousRegions.class&#10;#&#9;src/com/example/mutationfilter/InheritanceFilter.class&#10;#&#9;src/com/example/mutationfilter/Mutation.class&#10;#&#9;src/com/example/mutationfilter/MutationTypeFilter.class&#10;#&#9;src/com/example/mutationfilter/QualityFilter.class&#10;#&#9;src/com/example/mutationfilter/SnpFilter.class&#10;#&#9;src/com/example/mutationfilter/TabFileReader.class&#10;#&#9;src/com/example/mutationfilter/TabFileWriter.class&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="test commit&#10;# Please enter the commit message for your changes. Lines starting&#10;# with '#' will be ignored, and an empty message aborts the commit.&#10;# On branch master&#10;# Changes to be committed:&#10;#   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)&#10;#&#10;#&#9;new file:   jython-engine.jar&#10;#&#9;new file:   jythonlib.jar&#10;#&#10;# Changes not staged for commit:&#10;#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)&#10;#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)&#10;#&#10;#&#9;modified:   .DS_Store&#10;#&#9;modified:   .idea/workspace.xml&#10;#&#9;modified:   ExonReads/.DS_Store&#10;#&#9;modified:   src/.DS_Store&#10;#&#10;# Untracked files:&#10;#   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)&#10;#&#10;#&#9;.idea/libraries/jython_engine.xml&#10;#&#9;EGG-INFO/&#10;#&#9;ExonReads/reads_only_locs2.py&#10;#&#9;ExonReads/reads_only_locs_java.py&#10;#&#9;bamLocs.txt&#10;#&#9;genetic_map_HapMapII_GRCh37/.DS_Store&#10;#&#9;out/&#10;#&#9;pysam/&#10;#&#9;src/com/example/mutationfilter/CmToMbMap.class&#10;#&#9;src/com/example/mutationfilter/CrossReference.class&#10;#&#9;src/com/example/mutationfilter/ExonRead.class&#10;#&#9;src/com/example/mutationfilter/FamilyDataGroup.class&#10;#&#9;src/com/example/mutationfilter/Filter.class&#10;#&#9;src/com/example/mutationfilter/FilterProgram.class&#10;#&#9;src/com/example/mutationfilter/Flags.class&#10;#&#9;src/com/example/mutationfilter/GenericFilter.class&#10;#&#9;src/com/example/mutationfilter/HomozygousRegions$EndPoints.class&#10;#&#9;src/com/example/mutationfilter/HomozygousRegions.class&#10;#&#9;src/com/example/mutationfilter/InheritanceFilter.class&#10;#&#9;src/com/example/mutationfilter/Mutation.class&#10;#&#9;src/com/example/mutationfilter/MutationTypeFilter.class&#10;#&#9;src/com/example/mutationfilter/QualityFilter.class&#10;#&#9;src/com/example/mutationfilter/SnpFilter.class&#10;#&#9;src/com/example/mutationfilter/TabFileReader.class&#10;#&#9;src/com/example/mutationfilter/TabFileWriter.class&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1094,20 +1102,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/FilterProgram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="0" selection-start="5218" selection-end="5218" vertical-scroll-proportion="0.0" vertical-offset="5250" max-vertical-offset="6645">
-          <folding>
-            <element signature="e#11505#11572#0" expanded="true" />
-            <element signature="e#11626#11634#0" expanded="true" />
-            <element signature="e#14831#14890#0" expanded="true" />
-            <element signature="e#17328#17368#0" expanded="true" />
-            <element signature="e#17616#17626#0" expanded="true" />
-            <element signature="e#19583#19591#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/HomozygousRegions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="187" column="104" selection-start="7886" selection-end="7886" vertical-scroll-proportion="0.0" vertical-offset="1155" max-vertical-offset="4545">
@@ -1158,9 +1152,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/FilterProgram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="114" column="0" selection-start="4788" selection-end="4788" vertical-scroll-proportion="0.0" vertical-offset="1435" max-vertical-offset="6645">
+          <folding>
+            <element signature="e#11505#11572#0" expanded="true" />
+            <element signature="e#11626#11634#0" expanded="true" />
+            <element signature="e#14831#14890#0" expanded="true" />
+            <element signature="e#17328#17368#0" expanded="true" />
+            <element signature="e#17616#17626#0" expanded="true" />
+            <element signature="e#19583#19591#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/Flags.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="147" column="28" selection-start="5095" selection-end="5095" vertical-scroll-proportion="0.0" vertical-offset="1815" max-vertical-offset="5580">
+        <state line="130" column="44" selection-start="4339" selection-end="4339" vertical-scroll-proportion="0.0" vertical-offset="1710" max-vertical-offset="5580">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1169,7 +1177,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/mutationfilter/QualityFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="13" selection-start="1631" selection-end="1631" vertical-scroll-proportion="0.4642857" vertical-offset="555" max-vertical-offset="1035">
+        <state line="47" column="44" selection-start="1580" selection-end="1580" vertical-scroll-proportion="0.71428573" vertical-offset="405" max-vertical-offset="1050">
           <folding />
         </state>
       </provider>
