@@ -39,6 +39,7 @@ while (line):
 	chromosome = ""
 	line = exonCoords.readline()
 	chromosome = line.strip()
+	chromosome_chr = chromosome
 	
 	if (chromosome == 'chrM' and not chromosomeRef):
 		chromosome = 'chrMT'
@@ -74,7 +75,8 @@ while (line):
 		temp = []
 		for z in range(int(startEnd[0]), (int(startEnd[1]) + 1)):
 			temp.append(z)
-		exonName = "Exon" + str(exonCount) + ": " + startEnd[0] + "-" + startEnd[1]
+		# Print Exon coordinates as given in reference so can compare between files
+		exonName = "Exon" + str(exonCount) + ": " + chromosome_chr + ":" + startEnd[0] + "-" + startEnd[1]
 		exonDict[exonName] = temp
 		exonCount += 1
 	geneDict['num_exons'] = exonCount
