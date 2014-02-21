@@ -231,8 +231,8 @@ public class Flags {
                 }
             }
 
-            else if (s.equals("-ref_cutoff=")) {
-                REF_CUTOFF = Integer.parseInt(s);
+            else if (s.contains("-ref_cutoff=")) {
+                REF_CUTOFF = Integer.parseInt(s.substring(12));
             }
 
             // Consanguinity filter
